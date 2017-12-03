@@ -45,7 +45,8 @@ defmodule Instagram.Mixfile do
       {:faker, "~> 0.9", only: [:dev, :test]},
       {:facebook, "~> 0.17.0"},
       {:guardian, "~> 1.0"},
-      {:ex_machina, "~> 2.0", only: [:dev, :test]}
+      {:ex_machina, "~> 2.0", only: [:dev, :test]},
+      {:kronky, "~> 0.4.0"}
     ]
   end
 

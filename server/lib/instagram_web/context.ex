@@ -8,7 +8,6 @@ defmodule InstagramWeb.Context do
 
   def call(conn, _) do
     context = build_context(conn)
-    IO.inspect [context: context]
     put_private(conn, :absinthe, %{context: context})
   end
 

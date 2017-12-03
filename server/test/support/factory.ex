@@ -20,6 +20,14 @@ defmodule Instagram.Factory do
     }
   end
 
+  def user_factory(:user, attrs) do
+    %Accounts.User{
+      username: attrs.username,
+      email: Faker.Internet.email(),
+      avatar: Faker.Internet.image_url()
+    }
+  end
+
   def tag_factory do
     %Posts.PhotoTag{
       name: Faker.Pokemon.name()

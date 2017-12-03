@@ -42,6 +42,12 @@ defmodule InstagramWeb.Schema do
       arg :provider, type: :provider
       resolve &Resolvers.Accounts.login/3
     end
+
+    field :update_user, :user do
+      arg :username, non_null(:string)
+      middleware Middleware.Authorize
+      resolve &Resolvers.Accounts.update_user/3
+    end
   end
 
 end
