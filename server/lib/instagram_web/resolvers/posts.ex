@@ -19,6 +19,15 @@ defmodule InstagramWeb.Resolvers.Posts do
     end
   end
 
+  def delete_photo(_, %{id: id}, %{context: %{current_user: current_user}}) do
+    case Instagram.Posts.delete_photo(id, current_user.id) do
+      {:error, error_message} ->
+        {:error, error_message}
+      {:ok, _} ->
+        {:ok, "Successfully delete"}
+    end
+  end
+
   def get_all_tags(_, _, _) do
     {:ok, Instagram.Posts.get_all_tags()}
   end

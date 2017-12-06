@@ -27,8 +27,15 @@ defmodule Instagram.Posts do
     |> Repo.update()
   end
 
-  def delete_photo(%Photo{} = photo) do
-    Repo.delete(photo)
+  def delete_photo(photo_id, user_id) do
+    query = from p in Photo, where: p.id == ^photo_id and p.user_id == ^user_id
+
+    case Repo.one(query) do
+      nil ->
+        {:error, "Cannot delete this photo"}
+      photo ->
+        Repo.delete(photo)
+    end
   end
 
   def change_photo(%Photo{} = photo) do

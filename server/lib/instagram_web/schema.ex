@@ -36,6 +36,13 @@ defmodule InstagramWeb.Schema do
       resolve &Resolvers.Posts.create_photo/3
     end
 
+    @desc "Delete a photo"
+    field :delete_photo, :string do
+      arg :id, non_null(:id)
+      middleware Middleware.Authorize
+      resolve &Resolvers.Posts.delete_photo/3
+    end
+
     @desc "Login as a user"
     field :login, :user_session do
       arg :token, :string

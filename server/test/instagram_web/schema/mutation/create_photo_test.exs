@@ -25,10 +25,10 @@ defmodule InstagramWeb.Schema.Mutation.CreatePhotoTest do
     user = insert(:user)
     conn = build_conn() |> auth_user(user)
     response = post(conn, "/api/graphql", query: @query, variables: @variables)
+
     assert %{"data" => %{
       "createPhoto" => result
     }} = json_response(response, 200)
-
     assert result != nil
     assert result["id"] != nil
     assert result["user"] != nil
