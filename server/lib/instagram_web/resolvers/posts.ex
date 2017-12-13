@@ -28,6 +28,15 @@ defmodule InstagramWeb.Resolvers.Posts do
     end
   end
 
+  def update_photo(_, args, %{context: %{current_user: current_user}}) do
+    case Instagram.Posts.update_photo(args, current_user.id) do
+      {:error, error_message} ->
+        {:error, error_message}
+      {:ok, photo} ->
+        {:ok, photo}
+    end
+  end
+
   def get_all_tags(_, _, _) do
     {:ok, Instagram.Posts.get_all_tags()}
   end

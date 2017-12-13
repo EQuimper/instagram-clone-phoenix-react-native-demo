@@ -25,7 +25,8 @@ for _ <- 1..number_of_mock_photos do
   photo = %{
     image_url: Faker.Internet.image_url(),
     tags: Enum.take_random(tag_name, Enum.random(1..4)),
-    user_id: Enum.random(1..number_of_mock_users)
+    user_id: Enum.random(1..number_of_mock_users),
+    caption: Faker.Lorem.Shakespeare.hamlet()
   }
 
   %Posts.Photo{}

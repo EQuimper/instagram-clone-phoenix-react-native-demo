@@ -8,6 +8,7 @@ defmodule Instagram.Posts.Photo do
 
   schema "photos" do
     field :image_url, :string
+    field :caption, :string
 
     belongs_to :user, Instagram.Accounts.User
 
@@ -19,7 +20,7 @@ defmodule Instagram.Posts.Photo do
   @doc false
   def changeset(%__MODULE__{} = photo, attrs) do
     photo
-    |> cast(attrs, [:image_url, :user_id])
+    |> cast(attrs, [:image_url, :caption, :user_id])
     |> validate_required([:image_url, :user_id])
     |> put_assoc(:tags, parse_tags(attrs))
   end

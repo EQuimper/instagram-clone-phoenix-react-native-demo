@@ -4,6 +4,7 @@ defmodule Instagram.Repo.Migrations.CreatePhotos do
   def change do
     create table(:photos) do
       add :image_url, :string, null: false
+      add :caption, :string
 
       timestamps()
     end

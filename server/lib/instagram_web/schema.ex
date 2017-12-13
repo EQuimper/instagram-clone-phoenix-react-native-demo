@@ -31,9 +31,19 @@ defmodule InstagramWeb.Schema do
     @desc "Create a photo"
     field :create_photo, :photo do
       arg :image_url, non_null(:string)
+      arg :caption, :string
       arg :tags, non_null(list_of(:string))
       middleware Middleware.Authorize
       resolve &Resolvers.Posts.create_photo/3
+    end
+
+    @desc "Update a photo"
+    field :update_photo, :photo do
+      arg :id, non_null(:string)
+      arg :caption, :string
+      arg :tags, non_null(list_of(:string))
+      middleware Middleware.Authorize
+      resolve &Resolvers.Posts.update_photo/3
     end
 
     @desc "Delete a photo"
@@ -50,6 +60,7 @@ defmodule InstagramWeb.Schema do
       resolve &Resolvers.Accounts.login/3
     end
 
+    @desc "Update user"
     field :update_user, :user do
       arg :username, non_null(:string)
       middleware Middleware.Authorize

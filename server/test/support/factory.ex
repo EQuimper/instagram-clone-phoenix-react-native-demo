@@ -37,6 +37,7 @@ defmodule Instagram.Factory do
   def photo_factory do
     %Posts.Photo{
       image_url: Faker.Internet.image_url(),
+      caption: Faker.Lorem.Shakespeare.hamlet(),
       user: build(:user),
       tags: [build(:tag)]
     }

@@ -21,7 +21,19 @@ defmodule Instagram.Posts do
     |> Repo.insert()
   end
 
-  def update_photo(%Photo{} = photo, attrs) do
+  def update_photo(args, user_id) do
+    photo_id = Map.get(args, :id)
+    query = from p in Photo, where: p.id == ^photo_id and p.user_id == ^user_id
+
+    case Repo.one(query) do
+      nil ->
+        {:error, "Cannot update this photo"}
+      photo ->
+        photo
+        |> Photo.changeset(args)
+        |> Repo.update()
+    end
+
     photo
     |> Photo.changeset(attrs)
     |> Repo.update()
