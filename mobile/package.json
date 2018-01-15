@@ -14,6 +14,8 @@
   "devDependencies": {
     "babel-jest": "22.1.0",
     "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.15.0",
+    "eslint-config-equimper": "^2.2.1",
     "jest": "22.1.1",
     "react-test-renderer": "16.2.0"
   },

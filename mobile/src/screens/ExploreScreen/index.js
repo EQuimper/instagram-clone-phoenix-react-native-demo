@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class Explore extends Component {
+class ExploreScreen extends Component {
   state = {  }
   render() {
     return (
@@ -12,4 +12,4 @@ class Explore extends Component {
   }
 }
 
-export default Explore;
+export default ExploreScreen;

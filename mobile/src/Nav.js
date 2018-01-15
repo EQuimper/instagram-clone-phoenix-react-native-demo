@@ -1,12 +1,12 @@
-import { Navigation } from 'react-native-navigation'
+import { Navigation } from 'react-native-navigation';
 
-import { registerScreens } from './screens'
+import { registerScreens } from './screens';
 
-registerScreens()
+registerScreens();
 
 export default class Nav {
   constructor() {
-    this.initApp()
+    this.initApp();
   }
 
   initApp() {
@@ -15,14 +15,14 @@ export default class Nav {
         {
           label: 'Feeds',
           screen: 'instagramclone.FeedsScreen',
-          title: 'Instagram'
+          title: 'Instagram',
         },
         {
           label: 'Explore',
           screen: 'instagramclone.FeedsScreen',
-          title: 'Explore'
-        }
-      ]
-    })
+          title: 'Explore',
+        },
+      ],
+    });
   }
 }

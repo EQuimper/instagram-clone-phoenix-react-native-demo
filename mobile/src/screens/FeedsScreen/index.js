@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class Feeds extends Component {
+class FeedsScreen extends Component {
   state = {  }
   render() {
     return (
@@ -12,4 +12,4 @@ class Feeds extends Component {
   }
 }
 
-export default Feeds;
+export default FeedsScreen;
