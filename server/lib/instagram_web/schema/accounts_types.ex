@@ -7,12 +7,14 @@ defmodule InstagramWeb.Schema.AccountsTypes do
 
   object :user_session do
     field :token, non_null(:string)
+    field :user, :user
   end
 
   object :user do
+    field :id, non_null(:id)
     field :email, non_null(:string)
     field :avatar, non_null(:string)
-    field :username, non_null(:string)
+    field :username, :string
 
     field :inserted_at, non_null(:string)
     field :updated_at, non_null(:string)

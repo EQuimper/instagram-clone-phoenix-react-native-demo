@@ -9,7 +9,7 @@ defmodule InstagramWeb.Resolvers.Accounts do
 
         {:ok, token, _} = InstagramWeb.Auth.Guardian.encode_and_sign(user)
 
-        {:ok, %{token: token}}
+        {:ok, %{token: token, user: user}}
     end
   end
 

@@ -33,10 +33,6 @@ defmodule Instagram.Posts do
         |> Photo.changeset(args)
         |> Repo.update()
     end
-
-    photo
-    |> Photo.changeset(attrs)
-    |> Repo.update()
   end
 
   def delete_photo(photo_id, user_id) do
