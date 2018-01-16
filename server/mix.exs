@@ -38,15 +38,7 @@ defmodule Instagram.Mixfile do
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"},
-      {:absinthe, "~> 1.4"},
-      {:absinthe_plug, "~> 1.4"},
-      {:absinthe_ecto, ">= 0.0.0"},
-      {:faker, "~> 0.9", only: [:dev, :test]},
-      {:facebook, "~> 0.17.0"},
-      {:guardian, "~> 1.0"},
-      {:ex_machina, "~> 2.0", only: [:dev, :test]},
-      {:kronky, "~> 0.4.0"}
+      {:cowboy, "~> 1.0"}
     ]
   end
 

@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+
+import { PhotoCard } from '../../components';
 
 class FeedsScreen extends Component {
-  state = {  }
+  state = {};
   render() {
     return (
-      <View>
-        <Text>Feeds Screen</Text>
-      </View>
+      <ScrollView>
+        <PhotoCard />
+        <PhotoCard />
+        <PhotoCard />
+      </ScrollView>
     );
   }
 }

@@ -12,7 +12,7 @@ config :instagram,
 # Configures the endpoint
 config :instagram, InstagramWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "cTI+bjA5CPDZoUoNc6kcLviyZUPXnON1/pqZ3we7NSmLOovk2L+M7C6wJxqj2ctx",
+  secret_key_base: "D2foZXpG41FfljaP6MvTuhAc35dQE7a78eRlLR85SqMMB7runi9OGMhsYxdrubG2",
   render_errors: [view: InstagramWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Instagram.PubSub,
            adapter: Phoenix.PubSub.PG2]
@@ -21,12 +21,6 @@ config :instagram, InstagramWeb.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-
-# Configures Guardian
-config :instagram, InstagramWeb.Auth.Guardian,
-  issuer: "Instagram",
-  verify_issuer: true,
-  secret_key: "uc51kQ96hJkFj9whmFJhSptPC2kCM6L03UJPaDz7rVKdR2TUr01j7XdRDzqq1Qzs"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

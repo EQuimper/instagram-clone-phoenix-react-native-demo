@@ -34,7 +34,7 @@ defmodule InstagramWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_instagram_key",
-    signing_salt: "FVPotb3+"
+    signing_salt: "CWomdHyz"
 
   plug InstagramWeb.Router
 

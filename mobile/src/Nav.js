@@ -19,7 +19,7 @@ export default class Nav {
         },
         {
           label: 'Explore',
-          screen: 'instagramclone.FeedsScreen',
+          screen: 'instagramclone.ExploreScreen',
           title: 'Explore',
         },
       ],
