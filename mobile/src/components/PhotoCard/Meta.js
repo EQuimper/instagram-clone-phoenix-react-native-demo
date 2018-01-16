@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Meta() {
+export default function Meta({ caption }) {
   return (
     <View style={styles.root}>
       <View style={styles.likedWrapper}>
@@ -31,8 +31,7 @@ export default function Meta() {
       </View>
       <View style={styles.captionWrapper}>
         <Text numberOfLines={2} style={styles.text}>
-          <Text style={systemWeights.regular}>jonSnow</Text> What a great way
-          to end the weekend.
+          <Text style={systemWeights.regular}>jonSnow</Text> {caption}
         </Text>
       </View>
     </View>

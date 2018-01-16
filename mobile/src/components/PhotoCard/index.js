@@ -46,12 +46,11 @@ class PhotoCard extends Component {
         <Image
           style={styles.img}
           source={{
-            uri:
-              'https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2016/09/19/04/got-jon-snow-2.jpg',
+            uri: this.props.data.imageUrl,
           }}
         />
         <ActionBtns />
-        <Meta />
+        <Meta caption={this.props.data.caption} />
         <View style={styles.commentsWrapper}>
           <Touchable feedback="opacity">
             <Text style={styles.commentViewAll}>View all 13 comments</Text>
